@@ -11,23 +11,6 @@ module.exports = function(grunt) {
                 src: "views/js/main.js", dest: "views/js/main.min.js",
             },
         },
-
-        imagemin: {
-            dynamic: {
-                files: [{
-                    expand: true,
-                    cwd: 'img/',
-                    src: ['**/*.{png,jpg,gif}'],
-                    dest: 'img/min/'
-                }, {
-                    expand: true,
-                    cwd: 'views/images',
-                    src: ['**/*.{png,jpg,gif}'],
-                    dest: 'views/images/min/'
-                }]
-            }
-        }
-
     });
 
     // 3. Where we tell Grunt we plan to use this plug-in.
@@ -35,6 +18,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['uglify', 'imagemin']);
+    grunt.registerTask('default', ['uglify']);
 
 };
