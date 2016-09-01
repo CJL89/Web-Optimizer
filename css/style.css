@@ -1,24 +1,7 @@
 
-a { color: #12C; }
 a:visited { color: #61C; }
 a:hover, a:active { color: #c00; outline: 0; }
 
-img { border: 0; max-width: 100%; }
-
-header, footer, .container { max-width: 45em; margin: 0 auto; }
-
-.hero { padding: 2em; background-color: #f8f8f8; font-size:1.2em;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-}
-
-.content { padding: 1em 1em; }
-.content li { list-style-type: none; font-size: 1.1em;}
-.listImages { float:left; padding-right: 1em; }
-.listParagraph { font-size: 0.9em; font-style: italic; }
-
-
-#crp-stats { float: right; font-style: italic; }
 
 /* Smartphones (portrait) */
 @media only screen and (max-width: 480px) {
