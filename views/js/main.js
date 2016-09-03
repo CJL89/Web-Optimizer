@@ -439,7 +439,7 @@ var resizePizzas = function(size) {
         }
 
       // Variable randomPizzas was moved outside the for loop to prevent constant output.
-      var randomPizzas = document.getElementsByClassName(".randomPizzaContainer");
+      var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
 
       for (var i = 0; i < randomPizzas.length; i++) {
           randomPizzas[i].style.width = newWidth + "%";
