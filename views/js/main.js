@@ -439,7 +439,7 @@ var resizePizzas = function(size) {
         }
 
       // Variable randomPizzas was moved outside the for loop to prevent constant output.
-      var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
+      var randomPizzas = document.getElementsByClassName(".randomPizzaContainer");
 
       for (var i = 0; i < randomPizzas.length; i++) {
           randomPizzas[i].style.width = newWidth + "%";
@@ -496,21 +496,26 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   // Variable scroll was moved outside the for loop to limit the output.
-  var scroll = document.body.scrollTop / 1250;
+  var scroll = (document.body.scrollTop / 1250);
 
   // Created variable phase as an array
   var phase = []
 
   // Split for loop into two different functions and saving the output in the array phase.
   for (var i = 0; i < 5; i++) {
-      phase.push(Math.sin(scroll * 100);
+      phase.push(Math.sin(scroll + i));
+      console.log(phase);
   }
 
-  for (var i = 0; max = items.length; i < max; i++) {
-    items[i].translateX = items[i].basicLeft + phase[i % 5] + 'px';
+  // Variable items was moved outside the for loop to limit the output.
+  var items = document.getElementsByClassName('mover');
+
+  for (var i = 0; i < 35; i++) {
+      items[i].style.left = items[i].basicLeft + 100 * phase[i % 5] + 'px';
+      console.log(items);
   }
 
-  // User Timing API to the rescue again. Seriously, it's worth learning.
+  // User Timing API to the rescue again. Seriously, it's wortsh learning.
   // Super easy to create custom metrics.
   window.performance.mark("mark_end_frame");
   window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
@@ -533,7 +538,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var intViewportWidth = window.innerWidth;
 
   // Limited number of pizzas shown on screen.
-  for (var i = 0; numberOfPizzas = window.innerHeight / s * cols; i< numberOfPizzas; i++) {
+  for (var i = 0, numberOfPizzas = window.innerHeight / s * cols; i < numberOfPizzas; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
