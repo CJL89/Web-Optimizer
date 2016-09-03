@@ -63,6 +63,8 @@ GRUNT:
  - Both perfmatters.js & main.js has been minimized.
 
 PIZZA JS:
+Changed some querySelectors to the appropriate getElementsByClassName or getElementById.
+
 The function changeSliderLabel() has been optimized.
   - Before the code was not DRY; therefore, it was delaying the browser since repeated functions were taking place.
   - A variable was created outside the for loop, this way the result is grabbed once instead of every single time the loop goes through.
@@ -73,3 +75,4 @@ The function updatePositions() has been optimized.
   - Variable scroll was created outside the for loop so scrollTop is calculated before hand.
   - Number of calculated pizzas has been lowered from 200 to 12.
   - The getElementById has been moved outside the for loop, this way it's performed once and appended at the end of the loop.
+  - Elimated creation of variable elem.

@@ -406,13 +406,13 @@ var resizePizzas = function(size) {
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
-        document.querySelector("#pizzaSize").innerHTML = "Small";
+        document.getElementById("pizzaSize").innerHTML = "Small";
         return;
       case "2":
-        document.querySelector("#pizzaSize").innerHTML = "Medium";
+        document.getElementById("#pizzaSize").innerHTML = "Medium";
         return;
       case "3":
-        document.querySelector("#pizzaSize").innerHTML = "Large";
+        document.getElementById("pizzaSize").innerHTML = "Large";
         return;
       default:
         console.log("bug in changeSliderLabel");
@@ -441,7 +441,7 @@ var resizePizzas = function(size) {
       // Variable randomPizzas was moved outside the for loop to prevent constant output.
       var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
 
-      for (var i = 0; i < randomPizzas.length; i++) {
+      for (var i = 0, len = 24; i < randomPizzas.length; i++) {
           randomPizzas[i].style.width = newWidth + "%";
       }
     }
@@ -539,7 +539,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Limited number of pizzas shown on screen.
   for (var i = 0, numberOfPizzas = window.innerHeight / s * cols; i < numberOfPizzas; i++) {
-    var elem = document.createElement('img');
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
