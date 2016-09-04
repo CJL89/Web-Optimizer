@@ -409,7 +409,7 @@ var resizePizzas = function(size) {
         document.getElementById("pizzaSize").innerHTML = "Small";
         return;
       case "2":
-        document.getElementById("#pizzaSize").innerHTML = "Medium";
+        document.getElementById("pizzaSize").innerHTML = "Medium";
         return;
       case "3":
         document.getElementById("pizzaSize").innerHTML = "Large";
@@ -441,8 +441,9 @@ var resizePizzas = function(size) {
       // Variable randomPizzas was moved outside the for loop to prevent constant output.
       var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
 
-      for (var i = 0, len = 24; i < randomPizzas.length; i++) {
-          randomPizzas[i].style.width = newWidth + "%";
+      for (var i = 0, len = randomPizzas.length; i < len; i++) {
+          var member = randomPizzas[i];
+          member.style.width = newWidth + "%";
       }
     }
 
