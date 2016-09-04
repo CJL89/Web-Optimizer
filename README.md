@@ -73,6 +73,7 @@ The function changeSliderLabel() has been optimized.
   - Before the code was not DRY; therefore, it was delaying the browser since repeated functions were taking place.
   - A variable was created outside the for loop, this way the result is grabbed once instead of every single time the loop goes through.
   - The switch statement has been optimized to render the desired output.
+  - Added 2 variables to the for loop of changePizzaSizes().
 
 The function updatePositions() has been optimized.
   - Variable items was moved outside the function.
