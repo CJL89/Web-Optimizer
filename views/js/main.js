@@ -504,15 +504,15 @@ function updatePositions() {
 
   // Split for loop into two different functions and saving the output in the array phase.
   for (var i = 0; i < 5; i++) {
-      phase.push(Math.sin(scroll + i));
+      phase.push(Math.sin(scroll + i) * 100);
       console.log(phase);
   }
 
   // Variable items was moved outside the for loop to limit the output.
   var items = document.getElementsByClassName('mover');
 
-  for (var i = 0; i < 35; i++) {
-      items[i].style.left = items[i].basicLeft + 100 * phase[i % 5] + 'px';
+  for (var i = 0, max = items.length; i < max; i++) {
+      items[i].style.left = items[i].basicLeft + phase[i % 5] + 'px';
       console.log(items);
   }
 
@@ -537,9 +537,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Variable movingPizzas was created outside the for loop to limit the ouput.
   var movingPizzas = document.getElementById('movingPizzas1');
   var intViewportWidth = window.innerWidth;
+  var numberOfPizzas = window.innerHeight / s * cols;
 
   // Limited number of pizzas shown on screen.
-  for (var i = 0, numberOfPizzas = window.innerHeight / s * cols; i < numberOfPizzas; i++) {
+  for (var i = 0; i < numberOfPizzas; i++) {
     elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
