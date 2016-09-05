@@ -440,10 +440,10 @@ var resizePizzas = function(size) {
 
       // Variable randomPizzas was moved outside the for loop to prevent constant output.
       var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
+      var len = randomPizzas.length;
 
-      for (var i = 0, len = randomPizzas.length; i < len; i++) {
-          var member = randomPizzas[i];
-          member.style.width = newWidth + "%";
+      for (var i = 0; i < len; i++) {
+          randomPizzas[i].style.width = newWidth + "%";
       }
     }
 
@@ -487,10 +487,7 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 }
 
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
-// https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
-
-// Moves the sliding background pizzas based on scroll position
-var items = document.getElementsByClassName('mover');
+// https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html]
 
 function updatePositions() {
   frame++;
@@ -498,6 +495,7 @@ function updatePositions() {
 
   // Variable scroll was moved outside the for loop to limit the output.
   var scroll = (document.body.scrollTop / 1250);
+  var max = items.length;
 
   // Created variable phase as an array
   var phase = []
@@ -505,15 +503,10 @@ function updatePositions() {
   // Split for loop into two different functions and saving the output in the array phase.
   for (var i = 0; i < 5; i++) {
       phase.push(Math.sin(scroll + i) * 100);
-      console.log(phase);
   }
 
-  // Variable items was moved outside the for loop to limit the output.
-  var items = document.getElementsByClassName('mover');
-
-  for (var i = 0, max = items.length; i < max; i++) {
-      items[i].style.left = items[i].basicLeft + phase[i % 5] + 'px';
-      console.log(items);
+  for (var i = 0; i < max; i++) {
+      items[i].style.left = items[i].basicLeft + phase[i%5] + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's wortsh learning.
@@ -550,5 +543,6 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     movingPizzas.appendChild(elem);
   }
+  items = document.getElementsByClassName('mover');
   updatePositions();
 });

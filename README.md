@@ -66,8 +66,12 @@ CSS:
  - All css has been inlined.
  - Critical CSS has been separated in a different file (critical.css).
 
+IMAGES:
+ - Compressed all images to make them smaller and faster to load.
+
 PIZZA JS:
  - Changed some querySelectors to the appropriate getElementsByClassName or getElementById.
+ - Moved the items variable to the bottom of the JS file.
 
 The function changeSliderLabel() has been optimized.
   - Before the code was not DRY; therefore, it was delaying the browser since repeated functions were taking place.
